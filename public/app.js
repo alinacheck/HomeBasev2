@@ -26,7 +26,7 @@ function flyToLocation(currentFeature) {
 }
 
 function createPopup(currentFeature) {
-    console.log("current feature "+currentFeature);
+    console.log(currentFeature);
     const popups = document.getElementsByClassName('mapboxgl-popup');
     /** Check if there is already a popup on the map and if so, remove it */
     if (popups[0]) popups[0].remove();
