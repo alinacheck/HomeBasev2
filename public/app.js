@@ -461,6 +461,7 @@ map.on('load', function () {
                                 "coordinates": [postSnapshot.child("latlon").val()[1],postSnapshot.child("latlon").val()[0]]
                             },
                             "properties": {
+                                "address": postSnapshot.child("address").val(),
                                 "posteremail": childSnapshot.child("email").val(),
                                 "postername": childSnapshot.child("firstname").val() + " " + childSnapshot.child("lastname").val(),
                                 "livingsituation" : "living situation: " + postSnapshot.child("livingsituation").val(),

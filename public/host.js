@@ -30,6 +30,7 @@
 	const pb 	= document.getElementById('postbutton');
 	const status  = document.getElementById('status');
 	var location = null;
+	var addy = null;
 
 
 	//try moving mapbox functionality to JS script amm
@@ -58,8 +59,7 @@
 		geocoder.on('result', function (ev) {
 			console.log(ev.result.center); 
 			location = ev.result.center;
-			console.log(ev);
-			console.log(ev.result);
+			addy = ev.result.place_name;
 		});
   	});
 
@@ -100,7 +100,7 @@
 			//lengthofstay : LOS.value,
 			//losunits : units.value,
 			latlon: [location[1],location[0]],
-
+			address: addy,
 			tenant : null               
 		})
 			.then(function(){
