@@ -235,6 +235,7 @@ function applyFilters() {
         filterOption.forEach(function (filter) {
             console.log(filter.type);
             if (filter.type === 'checkbox' && filter.checked) {
+                console.log("checkie check")
                 checkboxFilters.forEach(function (objs) {
                     Object.entries(objs).forEach(function ([key, value]) {
                         if (value.includes(filter.value)) {
@@ -245,6 +246,7 @@ function applyFilters() {
                 });
             }
             if (filter.type === 'select-one' && filter.value) {
+                console.log("selcto")
                 selectFilters.forEach(function (objs) {
                     Object.entries(objs).forEach(function ([key, value]) {
                         if (value.includes(filter.value)) {
@@ -256,6 +258,7 @@ function applyFilters() {
             }
         });
         console.log(geojSelectFilters)
+        console.log(geojCheckboxFilters)
         if (geojCheckboxFilters.length === 0 && geojSelectFilters.length === 0) {
             geojsonData.features.forEach(function (feature) {
                 filteredGeojson.features.push(feature);
