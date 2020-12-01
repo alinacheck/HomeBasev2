@@ -57,7 +57,7 @@
 <script src="app.js"></script>
 
 <script>
-async function makeGeoJSON() {
+function makeGeoJSON() {
         var geojsonData = {
             type: 'FeatureCollection',
             features: [],
@@ -66,9 +66,9 @@ async function makeGeoJSON() {
         var db = firebase.database()
         var ref = db.ref("users").orderByKey();        
         ref.once("value")
-            .then(async function(snapshot){
-                snapshot.forEach(async function(childSnapshot){
-                    childSnapshot.child("postings").forEach(async function(postSnapshot){
+            .then(function(snapshot){
+                snapshot.forEach(function(childSnapshot){
+                    childSnapshot.child("postings").forEach(function(postSnapshot){
                         geojsonData.features.push({
                             "type": "Feature",
                             "geometry": {
@@ -82,7 +82,9 @@ async function makeGeoJSON() {
                     })
                 })
             })
-        console.log(await geojsonData);
+            .then(function(){
+                console.log(geojsonData);
+            });
 }
 makeGeoJSON()
 </script>
