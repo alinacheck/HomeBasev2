@@ -1,5 +1,6 @@
 /* eslint-disable strict */
 function  loadMaps(){
+    console.log("LOAD MAPS")
 mapboxgl.accessToken = config.accessToken;
 const columnHeaders = config.sideBarInfo;
 
