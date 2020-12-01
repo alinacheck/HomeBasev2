@@ -364,7 +364,7 @@ var loadOfferHousing = function(){
 		if(firebaseUser){
             console.log(firebaseUser);
             
-            target.innerHTML = '<object type="text/html" data="../host.html" width="500" height="500"></object>';
+            target.innerHTML = '<object type="text/html" data="../host.html" width="483" height="1010"></object>';
 		}
 		else{
             console.log('User is not logged in');
