@@ -440,7 +440,7 @@ map.on('load', function () {
     //     });
     });
 
-    async function makeGeoJSON() {
+    function makeGeoJSON() {
         var geojsonData = {
             type: 'FeatureCollection',
             features: []
@@ -449,9 +449,9 @@ map.on('load', function () {
         var db = firebase.database()
         var ref = db.ref("users").orderByKey();        
         ref.once("value")
-            .then(async function(snapshot){
-                snapshot.forEach(async function(childSnapshot){
-                    childSnapshot.child("postings").forEach(async function(postSnapshot){
+            .then(function(snapshot){
+                snapshot.forEach(function(childSnapshot){
+                    childSnapshot.child("postings").forEach(function(postSnapshot){
                         geojsonData.features.push({
                             "type": "Feature",
                             "geometry": {
@@ -465,7 +465,8 @@ map.on('load', function () {
                     })
                 })
             })
-        console.log(geojsonData);
+            .then(function(){
+            console.log(geojsonData);
                 // Add the the layer to the map
                 map.addLayer({
                     id: 'locationData',
@@ -482,7 +483,8 @@ map.on('load', function () {
                         'circle-opacity': 0.7,
                     },
                 });
-
+            })
+            .then(function(){
 
         map.on('click', 'locationData', function (e) {
             const features = map.queryRenderedFeatures(e.point, {
@@ -502,6 +504,7 @@ map.on('load', function () {
             map.getCanvas().style.cursor = '';
         });
         buildLocationList(geojsonData);
+    })
     }
 });
 
