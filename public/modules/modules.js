@@ -39,7 +39,6 @@ ui.navigation = `
 `;
 
 ui.default = `
-    <div class="card" style="width: 18rem
 <div>
 <style>
 h1 {text-align: center;
