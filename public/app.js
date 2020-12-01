@@ -443,7 +443,7 @@ map.on('load', function () {
     function makeGeoJSON() {
         var geojsonData = {
             type: 'FeatureCollection',
-            features: [],
+            features: []
         };
 
         var db = firebase.database()
