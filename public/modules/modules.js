@@ -39,7 +39,7 @@ ui.navigation = `
 `;
 
 ui.default = `
-
+    <div class="card" style="width: 18rem
 <div>
 <style>
 h1 {text-align: center;
@@ -149,6 +149,7 @@ ui.myAccount = `
                         <button type="submit" class="btn btn-light" onclick="create()">Update account</button>
                     </div>
                 </div>
+                <div id="acctstatus"></div>
             </form>
         </div>
     </div>
@@ -225,7 +226,6 @@ var loadFindHousing = function(){
 var loadSignIn = function(){
     //replacing login.html to enable transition from SignUp button to MyAccount page 16Nov amm
     target.innerHTML = ui.Login; //'<object type="text/html" data="../login.html" ></object>';
-
     //replacing login.html and login.js inline to enable transition from SignUp button to MyAccount page 16Nov amm
     const email    = document.getElementById('email');
     const password = document.getElementById('password');
@@ -366,5 +366,29 @@ var defaultModule = function(){
 var loadAllData = function(){
     target.innerHTML = ui.allData;
 };
+
+var create = function(){
+    var email   = document.getElementById('emailInput');
+	var firstname	= document.getElementById('firstName');
+	var lastname   = document.getElementById('lastName');
+	var phone  = document.getElementById('phoneNumber');
+    var dob  = document.getElementById('DOB');
+    
+    var user = firebase.auth().currentUser;
+    var id = user.uid;
+    var postRef = db.ref('users/' + id);
+    var newPostRef = postRef.push();
+        newPostRef.set({
+			email : email.value,
+			firstname : firstname.value,
+			lastname : lastname.value,
+			phonenumber : phone.value,
+			dateofbirth : dob.value
+        })
+        .then(function(){
+            acctstatus.innerHTML = "Account Updated!";
+        })
+    
+}
 
 defaultModule();
