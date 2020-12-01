@@ -466,7 +466,6 @@ map.on('load', function () {
                 })
             })
         setTimeout(function(){console.log(geojsonData);},2000);
-        console.log(geojsonData.features)
                 // Add the the layer to the map
                 map.addLayer({
                     id: 'locationData',
