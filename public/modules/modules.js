@@ -378,8 +378,8 @@ var create = function(){
     var user = firebase.auth().currentUser;
     var id = user.uid;
     var postRef = db.ref('users/' + id);
-    var newPostRef = postRef.push();
-        newPostRef.set({
+    //var newPostRef = postRef.push();
+        postRef.set({
 			email : email.value,
 			firstname : firstname.value,
 			lastname : lastname.value,
