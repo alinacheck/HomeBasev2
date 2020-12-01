@@ -442,14 +442,18 @@ map.on('load', function () {
     });
 
     function makeGeoJSON() {
-        var geojsonData = [];
+        var geojsonData = {
+            type: 'FeatureCollection',
+            features: [],
+        };
+
         var db = firebase.database()
         var ref = db.ref("users").orderByKey();        
         ref.once("value")
             .then(function(snapshot){
                 snapshot.forEach(function(childSnapshot){
                     childSnapshot.child("postings").forEach(function(postSnapshot){
-                        geojsonData.push({
+                        geojsonData.features.push({
                             "type": "Feature",
                             "geometry": {
                                 "type": "Point",
@@ -469,7 +473,7 @@ map.on('load', function () {
                     type: 'circle',
                     source: {
                         type: 'geojson',
-                        data: geojsonData,
+                        data: geojsonData.features,
                     },
                     paint: {
                         'circle-radius': 5, // size of circles
