@@ -379,7 +379,7 @@ var create = function(){
     var id = user.uid;
     var postRef = db.ref('users/' + id);
     //var newPostRef = postRef.push();
-        postRef.set({
+        postRef.update({
 			email : email.value,
 			firstname : firstname.value,
 			lastname : lastname.value,
@@ -388,8 +388,8 @@ var create = function(){
         })
         .then(function(){
             acctstatus.innerHTML = "Account Updated!";
-        })
+        });
     
-}
+};
 
 defaultModule();
