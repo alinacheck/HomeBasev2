@@ -453,7 +453,7 @@ map.on('load', function () {
                             "type": "Feature",
                             "geometry": {
                                 "type": "Point",
-                                "coordinates": [postSnapshot.child("longitude").val()[1],postSnapshot.child("latitude").val()[0]]
+                                "coordinates": [postSnapshot.child("latlon").val()[1],postSnapshot.child("latlon").val()[0]]
                             },
                             "properties": {
                                 "poster": childSnapshot.child("email").val()
