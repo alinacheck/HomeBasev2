@@ -440,7 +440,7 @@ map.on('load', function () {
     //     });
     });
 
-    function makeGeoJSON() {
+    async function makeGeoJSON() {
         var geojsonData = {
             type: 'FeatureCollection',
             features: []
@@ -449,9 +449,9 @@ map.on('load', function () {
         var db = firebase.database()
         var ref = db.ref("users").orderByKey();        
         ref.once("value")
-            .then(function(snapshot){
-                snapshot.forEach(function(childSnapshot){
-                    childSnapshot.child("postings").forEach(function(postSnapshot){
+            .then(async function(snapshot){
+                snapshot.forEach(async function(childSnapshot){
+                    childSnapshot.child("postings").forEach(async function(postSnapshot){
                         geojsonData.features.push({
                             "type": "Feature",
                             "geometry": {
@@ -465,7 +465,7 @@ map.on('load', function () {
                     })
                 })
             })
-        setTimeout(function(){console.log(geojsonData);},2000);
+        console.log(geojsonData);
                 // Add the the layer to the map
                 map.addLayer({
                     id: 'locationData',
