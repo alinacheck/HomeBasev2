@@ -31,7 +31,7 @@
 	const units = document.getElementById('units');
 	const pb 	= document.getElementById('postbutton');
 	const status  = document.getElementById('status');
-	var location = [,];
+	var location = null;
 
 
 	//try moving mapbox functionality to JS script amm
@@ -85,6 +85,7 @@
 			smokingfriendly : SmoF.value,
 			lengthofstay : LOS.value,
 			losunits : units.value,
+			latlon: [location[1],location[0]],
 			tenant : null        
         });
 
@@ -100,6 +101,7 @@
 			smokingfriendly : SmoF.value,
 			lengthofstay : LOS.value,
 			losunits : units.value,
+			latlon: [location[1],location[0]],
 			tenant : null               
 		})
 			.then(function(){
