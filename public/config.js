@@ -1,7 +1,7 @@
 
 const config = {
     style: "mapbox://styles/mapbox/streets-v11",
-    accessToken: "pk.eyJ1IjoiY3ZlbnRyZXMiLCJhIjoiY2tpMmZtYXVkMWpwMTJxb2RoeGdxd3c4eiJ9.2sqpkAKdrE9fPnrTWXZAPg",
+    accessToken: "pk.eyJ1IjoiYmhhcnJ5IiwiYSI6ImNrZmVmd3hkbDA0aWEyeXRqaGpxbDBzNWsifQ.bIHGogBJUCCaraWEZv8KHA",
     CSV: "./Example.csv",
     center: [-71.0932,42.3592], //Lng, Lat
     zoom: 13, //Default zoom
