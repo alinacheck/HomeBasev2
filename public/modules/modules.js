@@ -39,18 +39,85 @@ ui.navigation = `
 `;
 
 ui.default = `
-    <div class="card" style="width: 18rem;">
-        <div class="card-header">
-            HomeBase
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Welcome to Homebase</h5>
-            <p class="card-text">A centralized resource for finding and offering temporary, safe housing options in
-            the aftermath of a disaster event.</p>
-        </div>
-        <img src="hands.jpeg" class="card-img-top" alt="Home Image">
-    </div> 
+
+<div>
+<style>
+h1 {text-align: center;
+padding-top: 5rem;}
+
+p {text-align: center;
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">}
+div {text-align: center;}
+</style>
+<h1>Welcome to HomeBase</h1>
+  <p>We are centralized resource for finding and offering temporary, safe housing options in the aftermath of a disaster event.</p>
+  <img src="Picture 1.png" alt="Hands making house" width="350" height="260">
+
+</div>
+
 `;
+
+ui.findHousing = `
+
+
+    <div class='flex-parent viewport-full relative scroll-hidden'>
+        <div class='flex-child w-full w360-ml absolute static-ml left bottom'>
+            <div class='flex-parent flex-parent--column viewport-third bg-white'>
+                <div class='flex-child flex-child--grow'>
+                    <div id="sidebarA"
+                        class="flex-parent flex-parent--column-ml flex-parent--center-main theme py12 px12 ">
+                        <h3 id='title' class='txt-l-ml txt-m txt-bold mb6 mr0-ml mr24 align-center block'>
+                        </h3>
+                        <p id='description' class='txt-s py12 none block-ml'>
+                        </p>
+                        <div class="flex-parent flex-parent--center-main relative-ml absolute right top mt0-ml mt6">
+                            <button id='filterResults' class='txt-bold btn btn--stroke mr0-ml mr12 px18-ml px6'>
+                                <svg class='icon inline-block align-middle h24 w24'>
+                                    <use xlink:href='#icon-filter' /></svg>
+                                <p class="inline-block-ml align-middle remove none">Show Filters</p>
+                            </button>
+                        </div>
+
+
+                    </div>
+                    <div id="listings" class="flex-child viewport-twothirds py12 px12 listings scroll-auto"></div>
+
+                </div>
+            </div>
+        </div>
+        <div class='flex-child flex-child--grow w-auto viewport-full-ml viewport-twothirds' id='map'>
+
+        </div>
+
+        <div id='modal'
+            class='absolute top right bottom left scroll-auto hide-visually flex-parent flex-parent--center-main mt120-ml'>
+            <div class='pt36'>
+                <div class='flex-child bg-white round relative scroll-auto'>
+                    <button id='exitButton' class='absolute top right px12 py12'>
+                        <svg class='icon link color-darken50'>
+                            <use xlink:href='#icon-close'></use>
+                        </svg>
+                    </button>
+                    <div class='px24 py24'>
+                        <form id="filters"></form>
+                        <div class='align-center py12'></div>
+                        <div class="flex-parent flex-parent--center-main">
+                            <button id="removeFilters" class="btn">Reset Filters</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+`;
+
 
 ui.myAccount = `
     <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
@@ -144,10 +211,16 @@ ui.Login = `
 
 
 
+
 var target     = document.getElementById('target');
 var navigation = document.getElementById('navigation');
 navigation.innerHTML += ui.navigation;
 
+
+var loadFindHousing = function(){
+    target.innerHTML = ui.findHousing;
+    loadMaps();
+  };
 
 var loadSignIn = function(){
     //replacing login.html to enable transition from SignUp button to MyAccount page 16Nov amm

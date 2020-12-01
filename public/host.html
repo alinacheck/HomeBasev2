@@ -33,7 +33,7 @@
       </div>
       <div class="form-group">
         <label for="typeOfAccommodation">Type of Accommodation</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <select class="form-control" id="typeOfAccommodation">
           <option selected>Select...</option>  
           <option>Apartment</option>
           <option>House</option>
@@ -43,7 +43,7 @@
       </div>
       <div class="form-group">
         <label for="livingSituation">Living Situation</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <select class="form-control" id="livingSituation">
           <option selected>Select...</option>
           <option>Private quarters</option>
           <option>Shared quarters</option>
@@ -57,40 +57,40 @@
       <div class="form-group">
         <label for="filters"> Filters</label>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck1">
-          <label class="form-check-label" for="gridCheck1">
+          <input class="form-check-input" type="checkbox" id="FamilyFriendly">
+          <label class="form-check-label" for="FamilyFriendly">
             Family friendly
           </label>
         </div>
       </div>
       <div class="form-group">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck2">
-          <label class="form-check-label" for="gridCheck2">
+          <input class="form-check-input" type="checkbox" id="FemaleFriendly">
+          <label class="form-check-label" for="FemaleFriendly">
             Female friendly
           </label>
         </div>
       </div>
       <div class="form-group">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck3">
-          <label class="form-check-label" for="gridCheck3">
+          <input class="form-check-input" type="checkbox" id="FemaleOnly">
+          <label class="form-check-label" for="FemaleOnly">
             Female only
           </label>
         </div>
       </div>
       <div class="form-group">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck4">
-          <label class="form-check-label" for="gridCheck4">
+          <input class="form-check-input" type="checkbox" id="PetFriendly">
+          <label class="form-check-label" for="PetFriendly">
             Pet friendly
           </label>
         </div>
       </div>
       <div class="form-group">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck5">
-          <label class="form-check-label" for="gridCheck5">
+          <input class="form-check-input" type="checkbox" id="SmokingFriendly">
+          <label class="form-check-label" for="SmokingFriendly">
             Smoking friendly
           </label>
         </div>
@@ -99,7 +99,7 @@
       <div class="form-row">
         <label for="lengthOfStay">How long can you host?</label>
         <div class="form-group col-md-6">
-          <input type="number" class="form-control" placeholder="Number">
+          <input type="number" class="form-control" placeholder="Number" id=lengthOfStay>
         </div>
         <div class="form-group col-md-6">
           <select class="form-control" id="units">
@@ -120,7 +120,9 @@
         </div>
         --->
         <div id="map"></div>
-        <button type="submit" class="btn btn-light" onclick="post()">Post</button>  
+        <button type="button" class="btn btn-light" id="postbutton">Post</button>
+        <div id="status"></div>
+        <!---<button type="button" class="btn btn-light" onclick="fake()">Fake</button>   --->
       </div>
     </form>
   </div>
@@ -204,6 +206,8 @@
             }
         });
     </script>
+
+    <script src="host.js"></script>
      
     </body>
 
