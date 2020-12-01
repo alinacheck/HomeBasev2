@@ -23,12 +23,10 @@
 	const LS	= document.getElementById('livingSituation');
 	const NOG   = document.getElementById('numberOfGuests');
 	const FamF  = document.getElementById('FamilyFriendly');
-	const FemF  = document.getElementById('FemaleFriendly');
 	const FemO  = document.getElementById('FemaleOnly');
+	const FemF  = document.getElementById('FemaleHost');
 	const PetF  = document.getElementById('PetFriendly');
-	const SmoF  = document.getElementById('SmokingFriendly');
-	const LOS   = document.getElementById('lengthOfStay');
-	const units = document.getElementById('units');
+	const SmoF  = document.getElementById('SmokingOkay');
 	const pb 	= document.getElementById('postbutton');
 	const status  = document.getElementById('status');
 	var location = null;
@@ -83,6 +81,7 @@
 			lengthofstay : LOS.value,
 			losunits : units.value,
 			latlon: [location[1],location[0]],
+
 			tenant : null        
         });
 
@@ -99,6 +98,7 @@
 			lengthofstay : LOS.value,
 			losunits : units.value,
 			latlon: [location[1],location[0]],
+
 			tenant : null               
 		})
 			.then(function(){

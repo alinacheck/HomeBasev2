@@ -25,9 +25,9 @@ ui.navigation = `
                     Help
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarHelp">
-                    <a class="dropdown-item" href="#">Contact Us</a>
-                    <a class="dropdown-item" href="#">Privacy Policy</a>
-                    <a class="dropdown-item" href="#">Terms & Conditions</a>
+                    <a class="dropdown-item" href="#" onclick="loadContactUs()" >Contact Us</a>
+                    <a class="dropdown-item" href="#" onclick="loadPrivacyPolicy()" >Privacy Policy</a>
+                    <a class="dropdown-item" href="#" onclick="loadTermsConditions()" >Terms & Conditions</a>
                 </div>
             </li>
             <li class="nav-item">
@@ -49,8 +49,13 @@ p {text-align: center;
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">}
 div {text-align: center;}
 </style>
-<h1>Welcome to HomeBase</h1>
-  <p>We are centralized resource for finding and offering temporary, safe housing options in the aftermath of a disaster event.</p>
+<br></br>
+<h1>Welcome to</h1>
+
+<img src="hb_title.png" alt="HomeBase" width="350" height="100">
+<br></br>
+
+  <p>A centralized resource for finding and offering temporary, safe housing options in the aftermath of a disaster event.</p>
   <img src="Picture 1.png" alt="Hands making house" width="350" height="260">
 
 </div>
@@ -209,8 +214,51 @@ ui.Login = `
     -->
 `; 
 
+ui.contactUs = `
+<div>
+
+<h1><b>CONTACT US</b></h1>
+<br></br>
+  <p>The best method to contact us is telepathy. Or extreme programming.</p>
+
+</div>
+
+`; 
+
+ui.termsConditions = `
+<div>
+
+<h1><b>TERMS & CONDITIONS</b></h1>
+<br></br>
+  <p><b>DISCLAIMER & LIABILITY.</b> To the full extent permitted by law, HomeBase, and its officers, directors, employees, agents, licensors, affiliates, and successors in interest (1) make no promises, warranties, or representations as to HomeBase, including its completeness, accuracy, availability, timeliness, propriety, security or reliability; (2) provide HomeBase on an "AS IS" and "AS AVAILABLE" basis and any risk of using HomeBase is assumed by you; (3) disclaim all warranties, express or implied, including as to accuracy, merchantability, fitness for a particular purpose, and non-infringement, and all warranties arising from course of dealing, usage, or trade practice; and (4) disclaim any liability or responsibility for acts, omissions, or conduct of you or any party in connection with HomeBase. HomeBase Entities are NOT liable for any direct, indirect, consequential, incidental, special, punitive, or other losses, including lost profits, revenues, data, goodwill, etc., arising from or related to HomeBase.
+  </p>
+  <br></br>
+  <p><b>INTERACTIONS WITH USERS.</b> You Have Sole Responsibility When Interacting with Hosts or Guests. Our Services provide a platform to arrange stays and communicate with one another. HomeBase is not a party to, has no involvement or interest in, makes no representations or warranties as to, and has no responsibility or liability with respect to any communications, transactions, interactions, disputes or any relations whatsoever between you and any other person or organization. You are solely responsible for your interactions with other users of our Services. We reserve the right, but have no obligation, to monitor interactions between you and other users of our Services. We cannot be responsible for the interactions that you have with other HomeBase members, so please use good judgment and keep safety in mind when you use our Services.
+  </p>
+  
+
+</div>
+
+`; 
+
+ui.privacyPolicy = `
+<div>
+<h1><b>PRIVACY POLICY</b></h1>
+<br></br>
+<p><b>Information You Provide to Us.</b> 
+We collect information you provide to us, such as when you create an account, update your profile, use the interactive features of our Services, or communicate with us. The types of information we may collect include basic user information, such as your name, username, gender, birth date, email address, mailing address, billing address, phone number and photographs. </p>
+<br></br>
+<p><b>Information We Collect Automatically.</b> 
+When you access or use our Services, we may also automatically collect information about you, including:</p>
+<p><li>Location Information: We may collect information about your location when you access our mobile application or website, or otherwise consent to the collection of this information.</li>
+<li>Device Information: We collect device-specific information when you access our Services, including your hardware model, operating system and version, unique device identifiers, mobile network information and information about the device's interaction with our Services.</li>
+<li>Log Information: We collect log information about how you access or use our Services, including your access times, browser type and language, Internet Service Provider and Internet Protocol (IP) address.</li>
+<li>Information Collected by Cookies and other Tracking Technologies: We may automatically collect information using cookies, web beacons and other tracking technologies to, among other things, improve our Services and your experience, monitor user activity, count visits, understand usage and campaign effectiveness, and tell if an email has been opened and acted upon.</li></p>
 
 
+</div>
+
+`; 
 
 var target     = document.getElementById('target');
 var navigation = document.getElementById('navigation');
@@ -354,8 +402,16 @@ var loadMyAccount = function(){
 
 };
 
-var loadBalance = function(){
-    target.innerHTML = ui.balance;
+var loadContactUs = function(){
+    target.innerHTML = ui.contactUs;
+};
+
+var loadTermsConditions = function(){
+    target.innerHTML = ui.termsConditions;
+};
+
+var loadPrivacyPolicy = function(){
+    target.innerHTML = ui.privacyPolicy;
 };
 
 var defaultModule = function(){
@@ -378,8 +434,8 @@ var create = function(){
     var user = firebase.auth().currentUser;
     var id = user.uid;
     var postRef = db.ref('users/' + id);
-    var newPostRef = postRef.push();
-        newPostRef.set({
+    //var newPostRef = postRef.push();
+        postRef.update({
 			email : email.value,
 			firstname : firstname.value,
 			lastname : lastname.value,
@@ -388,8 +444,8 @@ var create = function(){
         })
         .then(function(){
             acctstatus.innerHTML = "Account Updated!";
-        })
+        });
     
-}
+};
 
 defaultModule();
