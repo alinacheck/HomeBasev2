@@ -222,7 +222,16 @@ var loadFindHousing = function(){
     target.innerHTML = ui.findHousing;
     loadMaps();
   };
-ntById('logout');
+
+var loadSignIn = function(){
+    //replacing login.html to enable transition from SignUp button to MyAccount page 16Nov amm
+    target.innerHTML = ui.Login; //'<object type="text/html" data="../login.html" ></object>';
+    //replacing login.html and login.js inline to enable transition from SignUp button to MyAccount page 16Nov amm
+    const email    = document.getElementById('email');
+    const password = document.getElementById('password');
+    const login    = document.getElementById('login');
+    const signup   = document.getElementById('signup');
+    const logout   = document.getElementById('logout');
 
    /*  // login
     login.addEventListener('click', e => {
