@@ -466,7 +466,8 @@ map.on('load', function () {
                     })
                 })
             })
-        
+        console.log(geojsonData)
+        console.log(geojsonData.features)
                 // Add the the layer to the map
                 map.addLayer({
                     id: 'locationData',
