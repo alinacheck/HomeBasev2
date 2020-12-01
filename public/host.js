@@ -58,7 +58,8 @@
 		geocoder.on('result', function (ev) {
 			console.log(ev.result.center); 
 			location = ev.result.center;
-			console.log(ev.result.address);
+			console.log(ev);
+			console.log(ev.result);
 		});
   	});
 
