@@ -39,7 +39,6 @@ ui.navigation = `
 `;
 
 ui.default = `
-    <div class="card" style="width: 18rem
 <div>
 <style>
 h1 {text-align: center;
@@ -146,7 +145,7 @@ ui.myAccount = `
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-10">
-                        <button type="submit" class="btn btn-light" onclick="create()">Update account</button>
+                        <button type="button" class="btn btn-light" onclick="create()">Update account</button>
                     </div>
                 </div>
                 <div id="acctstatus"></div>
@@ -368,6 +367,8 @@ var loadAllData = function(){
 };
 
 var create = function(){
+    var db = firebase.database();
+
     var email   = document.getElementById('emailInput');
 	var firstname	= document.getElementById('firstName');
 	var lastname   = document.getElementById('lastName');
