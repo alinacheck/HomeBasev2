@@ -13,7 +13,7 @@ const config = {
         {
             type: "dropdown",
             title: "Number of guests: ",
-            columnHeader: "Max. # of Guests",
+            columnHeader: "numberofguests",
             listItems: [
                 '1',
                 '2',
@@ -31,7 +31,7 @@ const config = {
         {
             type: "checkbox",
             title: "Type of Accommodation: ",
-            columnHeader: "Type",
+            columnHeader: "typeofaccomodation",
             listItems: [
                 'Apartment',
                 'House',
@@ -43,14 +43,38 @@ const config = {
         {
             type: "checkbox",
             title: "Living situation: ",
-            columnHeader: "Living Situation",
+            columnHeader: "livingsituation",
             listItems: ["Private quarters", "Shared quarters", "Entire accommodation"]
         },
         {
             type: "checkbox",
-            title: "Specifics: ",
-            columnHeader: "Filters",
-            listItems: ["Family friendly", "Female only", "Female host", "Pet friendly", "Smoking okay"]
+            title: "Family friendly: ",
+            columnHeader: "familyfriendly",
+            listItems: ["Family friendly"]
+        },
+        {
+            type: "checkbox",
+            title: "Female only: ",
+            columnHeader: "femaleonly",
+            listItems: ["Female only"]
+        },
+        {
+            type: "checkbox",
+            title: "Female friendly: ",
+            columnHeader: "femalefriendly",
+            listItems: ["Female friendly"]
+        },
+        {
+            type: "checkbox",
+            title: "Pet friendly: ",
+            columnHeader: "petfriendly",
+            listItems: ["Pet friendly"]
+        },
+        {
+            type: "checkbox",
+            title: "Smoking friendly: ",
+            columnHeader: "smokingfriendly",
+            listItems: ["Smoking friendly"]
         }
         
     ]
