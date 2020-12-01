@@ -61,10 +61,7 @@
 			console.log(ev.result.center); 
 			location = ev.result.center;
 		});
-  });
-
-
-
+  	});
 
 
 	// write
@@ -78,11 +75,11 @@
 			typeofaccomodation : TOA.value,
 			livingsituation : LS.value,
 			numberofguests : NOG.value,
-			familyfriendly : FamF.value,
-			femalefriendly : FemF.value,
-			femaleonly : FemO.value,
-			petfriendly : PetF.value,
-			smokingfriendly : SmoF.value,
+			familyfriendly : FamF.checked,
+			femalefriendly : FemF.checked,
+			femaleonly : FemO.checked,
+			petfriendly : PetF.checked,
+			smokingfriendly : SmoF.checked,
 			lengthofstay : LOS.value,
 			losunits : units.value,
 			latlon: [location[1],location[0]],
@@ -94,11 +91,11 @@
 			typeofaccomodation : TOA.value,
 			livingsituation : LS.value,
 			numberofguests : NOG.value,
-			familyfriendly : FamF.value,
-			femalefriendly : FemF.value,
-			femaleonly : FemO.value,
-			petfriendly : PetF.value,
-			smokingfriendly : SmoF.value,
+			familyfriendly : FamF.checked,
+			femalefriendly : FemF.checked,
+			femaleonly : FemO.checked,
+			petfriendly : PetF.checked,
+			smokingfriendly : SmoF.checked,
 			lengthofstay : LOS.value,
 			losunits : units.value,
 			latlon: [location[1],location[0]],
