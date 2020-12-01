@@ -29,6 +29,38 @@
 	const SmoF  = document.getElementById('SmokingOkay');
 	const pb 	= document.getElementById('postbutton');
 	const status  = document.getElementById('status');
+	var location = null;
+
+
+	//try moving mapbox functionality to JS script amm
+	mapboxgl.accessToken = 'pk.eyJ1IjoiYmhhcnJ5IiwiYSI6ImNrZmVmd3hkbDA0aWEyeXRqaGpxbDBzNWsifQ.bIHGogBJUCCaraWEZv8KHA';
+	var map = new mapboxgl.Map({
+		container: 'map',
+		style: 'mapbox://styles/mapbox/streets-v11',
+		center: [-79.4512, 43.6568],
+		zoom: 13
+	});
+    
+	var geocoder = new MapboxGeocoder({
+		placeholder: 'Enter Location Address',
+		accessToken: mapboxgl.accessToken,
+		marker: {
+		color: 'orange'
+		},
+		mapboxgl: mapboxgl
+	});
+ 
+	map.addControl(geocoder);
+
+	map.on('load', function () {
+		// Listen for the `geocoder.input` event that is triggered when a user
+		// makes a selection
+		geocoder.on('result', function (ev) {
+			console.log(ev.result.center); 
+			location = ev.result.center;
+		});
+  	});
+
 
 	// write
 	pb.addEventListener('click', e => {
@@ -41,11 +73,15 @@
 			typeofaccomodation : TOA.value,
 			livingsituation : LS.value,
 			numberofguests : NOG.value,
-			familyfriendly : FamF.value,
-			femaleonly : FemO.value,
-			femalehost : FemF.value,
-			petfriendly : PetF.value,
-			smokingokay : SmoF.value,
+			familyfriendly : FamF.checked,
+			femalefriendly : FemF.checked,
+			femaleonly : FemO.checked,
+			petfriendly : PetF.checked,
+			smokingfriendly : SmoF.checked,
+			lengthofstay : LOS.value,
+			losunits : units.value,
+			latlon: [location[1],location[0]],
+
 			tenant : null        
         });
 
@@ -54,11 +90,15 @@
 			typeofaccomodation : TOA.value,
 			livingsituation : LS.value,
 			numberofguests : NOG.value,
-			familyfriendly : FamF.value,
-			femaleonly : FemO.value,
-			femalehost : FemF.value,
-			petfriendly : PetF.value,
-			smokingokay : SmoF.value,
+			familyfriendly : FamF.checked,
+			femalefriendly : FemF.checked,
+			femaleonly : FemO.checked,
+			petfriendly : PetF.checked,
+			smokingfriendly : SmoF.checked,
+			lengthofstay : LOS.value,
+			losunits : units.value,
+			latlon: [location[1],location[0]],
+
 			tenant : null               
 		})
 			.then(function(){
@@ -67,3 +107,4 @@
 			});
 	});
 }());
+
