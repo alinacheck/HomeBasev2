@@ -424,14 +424,14 @@ map.on('load', function () {
 
     // csv2geojson - following the Sheet Mapper tutorial https://www.mapbox.com/impact-tools/sheet-mapper
     console.log('loaded');
-    // $(document).ready(function () {
-    //     console.log('ready');
+    $(document).ready(function () {
+        console.log('ready');
     //     $.ajax({
     //         type: 'GET',
     //         url: config.CSV,
     //         dataType: 'text',
     //         success: function (csvData) {
-    //             makeGeoJSON(csvData);
+        makeGeoJSON(csvData);
     //         },
     //         error: function (request, status, error) {
     //             console.log(request);
@@ -439,7 +439,7 @@ map.on('load', function () {
     //             console.log(error);
     //         },
     //     });
-    // });
+    });
 
     function makeGeoJSON() {
         var geojsonData = [];
