@@ -23,12 +23,10 @@
 	const LS	= document.getElementById('livingSituation');
 	const NOG   = document.getElementById('numberOfGuests');
 	const FamF  = document.getElementById('FamilyFriendly');
-	const FemF  = document.getElementById('FemaleFriendly');
 	const FemO  = document.getElementById('FemaleOnly');
+	const FemF  = document.getElementById('FemaleHost');
 	const PetF  = document.getElementById('PetFriendly');
-	const SmoF  = document.getElementById('SmokingFriendly');
-	const LOS   = document.getElementById('lengthOfStay');
-	const units = document.getElementById('units');
+	const SmoF  = document.getElementById('SmokingOkay');
 	const pb 	= document.getElementById('postbutton');
 	const status  = document.getElementById('status');
 
@@ -44,12 +42,10 @@
 			livingsituation : LS.value,
 			numberofguests : NOG.value,
 			familyfriendly : FamF.value,
-			femalefriendly : FemF.value,
 			femaleonly : FemO.value,
+			femalehost : FemF.value,
 			petfriendly : PetF.value,
-			smokingfriendly : SmoF.value,
-			lengthofstay : LOS.value,
-			losunits : units.value,
+			smokingokay : SmoF.value,
 			tenant : null        
         });
 
@@ -59,12 +55,10 @@
 			livingsituation : LS.value,
 			numberofguests : NOG.value,
 			familyfriendly : FamF.value,
-			femalefriendly : FemF.value,
 			femaleonly : FemO.value,
+			femalehost : FemF.value,
 			petfriendly : PetF.value,
-			smokingfriendly : SmoF.value,
-			lengthofstay : LOS.value,
-			losunits : units.value,
+			smokingokay : SmoF.value,
 			tenant : null               
 		})
 			.then(function(){
