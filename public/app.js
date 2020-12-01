@@ -233,7 +233,7 @@ function applyFilters() {
         filteredGeojson.features = [];
 
         filterOption.forEach(function (filter) {
-            console.log(filter);
+            console.log(filter.type);
             if (filter.type === 'checkbox' && filter.checked) {
                 checkboxFilters.forEach(function (objs) {
                     Object.entries(objs).forEach(function ([key, value]) {
@@ -255,7 +255,7 @@ function applyFilters() {
                 });
             }
         });
-
+        console.log(geojSelectFilters)
         if (geojCheckboxFilters.length === 0 && geojSelectFilters.length === 0) {
             geojsonData.features.forEach(function (feature) {
                 filteredGeojson.features.push(feature);
