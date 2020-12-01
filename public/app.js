@@ -366,9 +366,7 @@ const geocoder = new MapboxGeocoder({
     placeholder: 'Enter Location Address',
     accessToken: mapboxgl.accessToken, // Set the access token
     mapboxgl: mapboxgl, // Set the mapbox-gl instance
-    marker: {
-        color: 'red'
-    }, // Use the geocoder's default marker style
+    marker: true, // Use the geocoder's default marker style
     zoom: 13,
 });
 
