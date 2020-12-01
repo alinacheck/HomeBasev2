@@ -449,7 +449,7 @@ map.on('load', function () {
             .then(function(snapshot){
                 snapshot.forEach(function(childSnapshot){
                     childSnapshot.child("postings").forEach(function(postSnapshot){
-                        features.push({
+                        geojsonData.push({
                             "type": "Feature",
                             "geometry": {
                                 "type": "Point",
