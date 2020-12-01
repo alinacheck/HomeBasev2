@@ -78,8 +78,8 @@
 			femaleonly : FemO.checked,
 			petfriendly : PetF.checked,
 			smokingfriendly : SmoF.checked,
-			lengthofstay : LOS.value,
-			losunits : units.value,
+			//lengthofstay : LOS.value,
+			//losunits : units.value,
 			latlon: [location[1],location[0]],
 
 			tenant : null        
@@ -95,8 +95,8 @@
 			femaleonly : FemO.checked,
 			petfriendly : PetF.checked,
 			smokingfriendly : SmoF.checked,
-			lengthofstay : LOS.value,
-			losunits : units.value,
+			//lengthofstay : LOS.value,
+			//losunits : units.value,
 			latlon: [location[1],location[0]],
 
 			tenant : null               
