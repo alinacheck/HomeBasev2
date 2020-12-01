@@ -145,7 +145,7 @@ ui.myAccount = `
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-10">
-                        <button type="submit" class="btn btn-light" onclick="create()">Update account</button>
+                        <button type="button" class="btn btn-light" onclick="create()">Update account</button>
                     </div>
                 </div>
                 <div id="acctstatus"></div>
