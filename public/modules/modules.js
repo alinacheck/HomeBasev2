@@ -367,6 +367,8 @@ var loadAllData = function(){
 };
 
 var create = function(){
+    var db = firebase.database();
+
     var email   = document.getElementById('emailInput');
 	var firstname	= document.getElementById('firstName');
 	var lastname   = document.getElementById('lastName');
