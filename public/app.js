@@ -463,7 +463,7 @@ map.on('load', function () {
                                 "posteremail": childSnapshot.child("email").val(),
                                 "postername": childSnapshot.child("firstname").val() + " " + childSnapshot.child("lastname").val(),
                                 "livingsituation" : "living situation: " + postSnapshot.child("livingsituation").val(),
-                                "typeofaccomodation" : "type: " + postSnapshot.child("livingsituation").val(),
+                                "typeofaccomodation" : "type: " + postSnapshot.child("typeofaccomodation").val(),
                                 "numberofguests" : "number of guests: " + postSnapshot.child("numberofguests").val(),
                                 "familyfriendly" : "family friendly: " + postSnapshot.child("familyfriendly").val(),
                                 "femalefriendly" : "female friendly: " + postSnapshot.child("femalefriendly").val(),
