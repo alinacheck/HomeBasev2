@@ -7,8 +7,8 @@ const config = {
     zoom: 13, //Default zoom
     title: "Search for Shelter",
     description: "You can sort shelter options by distance, or use the filters below to search options that match your needs.",
-    sideBarInfo: ["poster"],
-    popupInfo: ["poster"],
+    sideBarInfo: ["posteremail","postername","livingsituation","type of accomodation","numberofguests","familyfriendly","femalefriendly","femaleonly","petfriendly","smokingfriendly"],
+    popupInfo: ["posteremail","postername","livingsituation","type of accomodation","numberofguests","familyfriendly","femalefriendly","femaleonly","petfriendly","smokingfriendly"],
     filters: [
         {
             type: "dropdown",

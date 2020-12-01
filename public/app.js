@@ -460,7 +460,16 @@ map.on('load', function () {
                                 "coordinates": [postSnapshot.child("latlon").val()[1],postSnapshot.child("latlon").val()[0]]
                             },
                             "properties": {
-                                "poster": childSnapshot.child("email").val()
+                                "posteremail": childSnapshot.child("email").val(),
+                                "postername": childSnapshot.child("firstname").val() + " " + childSnapshot.child("lastname").val(),
+                                "livingsituation" : "living situation: " + postSnapshot.child("livingsituation").val(),
+                                "typeofaccomodation" : "type: " + postSnapshot.child("livingsituation").val(),
+                                "numberofguests" : "number of guests: " + postSnapshot.child("numberofguests").val(),
+                                "familyfriendly" : "family friendly: " + postSnapshot.child("familyfriendly").val(),
+                                "femalefriendly" : "female friendly: " + postSnapshot.child("femalefriendly").val(),
+                                "femaleonly" : "female only: " + postSnapshot.child("femaleonly").val(),
+                                "petfriendly" : "pet friendly: " + postSnapshot.child("petfriendly").val(),
+                                "smokingfriendly" : "smoking friendly: " + postSnapshot.child("smokingfriendly").val()
                             }
                         });
                     })
