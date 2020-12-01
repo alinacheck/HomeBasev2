@@ -226,8 +226,7 @@ function applyFilters() {
     filterForm.addEventListener('change', function () {
         const filterOptionHTML = this.getElementsByClassName('filter-option');
         const filterOption = [].slice.call(filterOptionHTML);
-        console.log(filterOptionHTML);
-        console.log(filterOption);
+        console.log(filterOption[0].type);
         const geojSelectFilters = [];
         const geojCheckboxFilters = [];
         filteredFeatures = [];
