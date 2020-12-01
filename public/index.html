@@ -56,5 +56,31 @@
 <script src="config.js"></script>
 <script src="app.js"></script>
 
+<script>
+function makeGeoJSON() {
+        var geojsonData = [];
+        var db = firebase.database()
+        var ref = db.ref("users").orderByKey();        
+        ref.once("value")
+            .then(function(snapshot){
+                snapshot.forEach(function(childSnapshot){
+                    childSnapshot.child("postings").forEach(function(postSnapshot){
+                        features.push({
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [postSnapshot.child("longitude").val()[1],postSnapshot.child("latitude").val()[0]]
+                            },
+                            "properties": {
+                                "poster": childSnapshot.child("email").val()
+                            }
+                        });
+                    })
+                })
+            })
+        console.log(geojsonData);
+}
+</script>
+
 
 </html>

@@ -441,7 +441,7 @@ map.on('load', function () {
         });
     });
 
-    function makeGeoJSON(csvData) {
+    function makeGeoJSON() {
         var geojsonData = [];
         var db = firebase.database()
         var ref = db.ref("users").orderByKey();        
