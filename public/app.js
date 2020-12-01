@@ -248,6 +248,7 @@ function applyFilters() {
             if (filter.type === 'select-one' && filter.value) {
                 console.log("selcto")
                 selectFilters.forEach(function (objs) {
+                    console.log(objs);
                     Object.entries(objs).forEach(function ([key, value]) {
                         if (value.includes(filter.value)) {
                             const geojFilter = [objs.header, filter.value];
