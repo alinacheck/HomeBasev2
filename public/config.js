@@ -74,7 +74,7 @@ const config = {
             type: "checkbox",
             title: "Smoking friendly: ",
             columnHeader: "smokingfriendly",
-            listItems: ["true"]
+            listItems: ["smoking friendly: true"]
         }
         
     ]
