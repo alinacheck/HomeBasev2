@@ -473,7 +473,7 @@ map.on('load', function () {
                     type: 'circle',
                     source: {
                         type: 'geojson',
-                        data: geojsonData.features,
+                        data: geojsonData
                     },
                     paint: {
                         'circle-radius': 5, // size of circles
