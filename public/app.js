@@ -442,7 +442,7 @@ map.on('load', function () {
     });
 
     function makeGeoJSON() {
-        var geojsonData = {
+        geojsonData = {
             type: 'FeatureCollection',
             features: []
         };
