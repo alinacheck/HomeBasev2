@@ -226,13 +226,14 @@ function applyFilters() {
     filterForm.addEventListener('change', function () {
         const filterOptionHTML = this.getElementsByClassName('filter-option');
         const filterOption = [].slice.call(filterOptionHTML);
-        console.log(filterOption[0].type);
+
         const geojSelectFilters = [];
         const geojCheckboxFilters = [];
         filteredFeatures = [];
         filteredGeojson.features = [];
 
         filterOption.forEach(function (filter) {
+            console.log(filter);
             if (filter.type === 'checkbox' && filter.checked) {
                 checkboxFilters.forEach(function (objs) {
                     Object.entries(objs).forEach(function ([key, value]) {
@@ -262,6 +263,8 @@ function applyFilters() {
         } else if (geojCheckboxFilters.length > 0) {
             geojCheckboxFilters.forEach(function (filter) {
                 geojsonData.features.forEach(function (feature) {
+                    console.log(filter);
+                    console.log(feature);
                     if (feature.properties[filter[0]].includes(filter[1])) {
                         if (
                             filteredGeojson.features.filter(
