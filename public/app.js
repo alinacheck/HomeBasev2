@@ -442,19 +442,27 @@ map.on('load', function () {
     });
 
     function makeGeoJSON(csvData) {
-        csv2geojson.csv2geojson(
-            csvData,
-            {
-                latfield: 'Latitude',
-                lonfield: 'Longitude',
-                delimiter: ',',
-            },
-            function (err, data) {
-                data.features.forEach(function (data, i) {
-                    data.properties.id = i;
-                });
-
-                geojsonData = data;
+        var geojsonData = [];
+        var db = firebase.database()
+        var ref = db.ref("users").orderByKey();        
+        ref.once("value")
+            .then(function(snapshot){
+                snapshot.forEach(function(childSnapshot){
+                    childSnapshot.child("postings").forEach(function(postSnapshot){
+                        features.push({
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [postSnapshot.child("longitude").val()[1],postSnapshot.child("latitude").val()[0]]
+                            },
+                            "properties": {
+                                "poster": childSnapshot.child("email").val()
+                            }
+                        });
+                    })
+                })
+            })
+        
                 // Add the the layer to the map
                 map.addLayer({
                     id: 'locationData',
@@ -471,8 +479,7 @@ map.on('load', function () {
                         'circle-opacity': 0.7,
                     },
                 });
-            }
-        );
+
 
         map.on('click', 'locationData', function (e) {
             const features = map.queryRenderedFeatures(e.point, {
